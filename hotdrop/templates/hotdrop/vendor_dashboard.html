@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard | HotDrop</title>
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            background: #ffe6e6;
+            margin: 0;
+        }
+
+        .header {
+            background: #ff4b4b;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #ff4b4b;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .summary-box {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            flex: 1;
+            background: #fff3f3;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #ffc7c7;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Welcome, {{ vendor.name }}</h2>
+    <div>
+        <a href="/vendor-dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="summary-box">
+        <div class="box">Total Orders: {{ orders.count }}</div>
+        <div class="box">Pending Orders: {{ orders|dictsort:"status"|length }}</div>
+        <div class="box">Delivered Orders: {{ orders|dictsort:"status"|length }}</div>
+    </div>
+
+    <h2>Your Orders</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.full_name }}</td>
+            <td>₹{{ order.total_amount }}</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

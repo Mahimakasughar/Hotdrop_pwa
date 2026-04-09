@@ -1,0 +1,308 @@
+{% load static %}
+{% include 'hotdrop/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | HotDrop Kitchen</title>
+  <link rel="stylesheet" href="{% static 'hotdrop/css/style.css' %}">
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      margin: 20px 50px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .products-container {
+      width: 90%;
+      margin: 0 auto 60px;
+    }
+
+    .products-header {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-details h3 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 15px;
+      color: #ff4b4b;
+      font-weight: bold;
+    }
+
+    .product-price del {
+      color: #888;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+
+    .view-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 18px;
+      background-color: #ff4b4b;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .view-btn:hover {
+      background-color: #e63946;
+    }
+
+    @media (max-width: 768px) {
+      .product-card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    Home / Shop / <span style="color: black;">Shop List</span>
+  </div>
+
+  <section class="products-container">
+    <h2 class="products-header">OUR PRODUCTS</h2>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/oreo-shake.jpg' %}" alt="Oreo Shake">
+        <div class="product-details">
+          <h3>Oreo Shake (Beverages)</h3>
+          <div class="product-price">₹ 150 <del>₹ 300</del></div>
+          <a href="{% url 'product_detail' 1 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/aalu-methi.jpg' %}" alt="Aalu Methi">
+        <div class="product-details">
+          <h3>Aalu Methi (North Indian)</h3>
+          <div class="product-price">₹ 250 <del>₹ 350</del></div>
+          <a href="{% url 'product_detail' 2 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/chicken-rice.jpg' %}" alt="Chicken Rice">
+        <div class="product-details">
+          <h3>Chicken Rice (Mughlai)</h3>
+          <div class="product-price">₹ 300 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 3 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/dal-makhani.jpg' %}" alt="Dal Makhani">
+        <div class="product-details">
+          <h3>Dal Makhani (Mughlai)</h3>
+          <div class="product-price">₹ 500 <del>₹ 700</del></div>
+          <a href="{% url 'product_detail' 4 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/dosa.jpg' %}" alt="Dosa">
+        <div class="product-details">
+          <h3>Dosa (South Indian)</h3>
+          <div class="product-price">₹ 200 <del>₹ 250</del></div>
+          <a href="{% url 'product_detail' 5 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/macaroni.jpg' %}" alt="Macaroni">
+        <div class="product-details">
+          <h3>Macaroni </h3>
+          <div class="product-price">₹ 500 <del>₹ 700</del></div>
+          <a href="{% url 'product_detail' 6 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+       <!-- Product 7 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/cheese burst pizza.jpg' %}" alt="Cheese burst pizza">
+        <div class="product-details">
+          <h3>Cheese burst pizza </h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 7 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 8 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/cold drink.jpg' %}" alt="Cold Drink">
+        <div class="product-details">
+          <h3>Cold Drink (Beverages)</h3>
+          <div class="product-price">₹ 100 <del>₹ 120</del></div>
+          <a href="{% url 'product_detail' 8 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 9 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/spring roll.jpg' %}" alt="Spring Roll">
+        <div class="product-details">
+          <h3>Spring Roll (Chinese)</h3>
+          <div class="product-price">₹ 150 <del>₹ 200</del></div>
+          <a href="{% url 'product_detail' 9 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 10 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/dim sim.jpg' %}" alt="Dim Sim">
+        <div class="product-details">
+          <h3>Dim Sim (Chinese )</h3>
+          <div class="product-price">₹ 600 <del>₹ 700</del></div>
+          <a href="{% url 'product_detail' 10 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+       <!-- Product 11 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/palak panner.jpg' %}" alt="Palak Panner">
+        <div class="product-details">
+          <h3>Palak Panner(North Indian)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 11 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 12 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/rajma chaval.jpg' %}" alt="Rajma Chaval">
+        <div class="product-details">
+          <h3>Rajma Chaval (North Indian)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 12 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 13 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/lemon rice.jpg' %}" alt="Lemon Rice">
+        <div class="product-details">
+          <h3>Lemon Rice (South Indian)</h3>
+          <div class="product-price">₹ 300 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 13 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 14 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/Mughlai kabab.jpg' %}" alt="Mughlai Kabab">
+        <div class="product-details">
+          <h3>Mughlai Kabab (Mughlai)</h3>
+          <div class="product-price">₹ 450 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 14 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 15 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/french toast.jpg' %}" alt="French Toast">
+        <div class="product-details">
+          <h3>French toast (Breakfast)</h3>
+          <div class="product-price">₹ 700 <del>₹ 800</del></div>
+          <a href="{% url 'product_detail' 15 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 16 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/pancake.jpg' %}" alt="Pancake">
+        <div class="product-details">
+          <h3>Pancake (Breakfast)</h3>
+          <div class="product-price">₹ 500 <del>₹ 600</del></div>
+          <a href="{% url 'product_detail' 16 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+      <!-- Product 17 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/fruit salad.jpg' %}" alt="Fruit Salad">
+        <div class="product-details">
+          <h3>Fruit Salad (Fruits)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 17 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+       <!-- Product 18 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/fruit juice.jpg' %}" alt="Fruit Juice">
+        <div class="product-details">
+          <h3>Fruit Juice (Fruits)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 18 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+       <!-- Product 19 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/granola.jpg' %}" alt="Granola">
+        <div class="product-details">
+          <h3>Granola (Breakfast)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 19 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+       <!-- Product 20 -->
+      <div class="product-card">
+        <img src="{% static 'hotdrop/img/karanji.jpg' %}" alt="Karanji">
+        <div class="product-details">
+          <h3>Karanji (Snacks)</h3>
+          <div class="product-price">₹ 400 <del>₹ 500</del></div>
+          <a href="{% url 'product_detail' 20 %}" class="view-btn">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include 'hotdrop/footer.html' %}
+</body>
+</html>
+ 

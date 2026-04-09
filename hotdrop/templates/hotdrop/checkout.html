@@ -1,0 +1,124 @@
+{% load static %}
+{% include 'hotdrop/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | HotDrop Kitchen</title>
+  <link rel="stylesheet" href="{% static 'hotdrop/css/style.css' %}">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .checkout-container {
+      width: 80%;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .billing-form input, .billing-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .order-summary {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 15px;
+      color: #ff4b4b;
+    }
+
+    .order-summary p {
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .place-order {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4b4b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .place-order:hover {
+      background-color: #e63946;
+    }
+  </style>
+</head>
+<body>
+
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <div class="checkout-grid">
+    <div class="billing-form">
+      <h3>Billing Details</h3>
+      <form method="POST" action="{% url 'checkout' %}">
+  {% csrf_token %}
+  <input type="text" name="full_name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="text" name="phone" placeholder="Phone Number" required>
+  <input type="text" name="address1" placeholder="Address Line 1" required>
+  <input type="text" name="address2" placeholder="Address Line 2">
+  <input type="text" name="city" placeholder="City" required>
+  <select name="payment_method" required>
+    <option value="">Select Payment Method</option>
+    <option value="cod">Cash on Delivery</option>
+    <option value="card">Credit/Debit Card</option>
+  </select>
+  <button type="submit" class="place-order">Place Order</button>
+</form>
+    </div>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <p><strong>Vendor:</strong> {{ vendor.name }}</p>
+      {% for item in cart.values %}
+        <p>{{ item.name }} × {{ item.quantity }} <span>₹{{ item.price|floatformat:2 }}</span></p>
+      {% endfor %}
+      <hr>
+      <p><strong>Total</strong> <span><strong>₹{{ total }}</strong></span></p>
+      <p>Vendor: {{ order.vendor.name }}</p>
+    </div>
+  </div>
+</div>
+
+{% include 'hotdrop/footer.html' %}
+</body>
+</html>

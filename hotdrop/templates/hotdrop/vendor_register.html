@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff4e63, #ff0062);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 370px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.card h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #d40044;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #ff0062;
+    box-shadow: 0px 0px 6px rgba(255,0,98,0.5);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff0062;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #cc004f;
+    transform: translateY(-2px);
+}
+
+p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+p a {
+    color: #ff0062;
+    font-weight: 600;
+    text-decoration: none;
+}
+p a:hover { text-decoration: underline; }
+
+.message {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Vendor Registration</h2>
+
+    {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          <div class="message" style="color:#009900;">{{ message }}</div>
+        {% else %}
+          <div class="message" style="color:#ff0000;">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-box">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="input-box">
+            <input type="text" name="phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Create Password" required>
+        </div>
+
+        <button type="submit">Register Now</button>
+
+        <p>Already a vendor? <a href="/vendor-login/">Login here</a></p>
+    </form>
+</div>
+
+</body>
+</html>

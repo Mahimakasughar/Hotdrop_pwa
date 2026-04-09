@@ -1,0 +1,94 @@
+{% load static %}
+{% include 'hotdrop/navbar.html' %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'hotdrop/css/style.css' %}">
+</head>
+<body>
+
+
+<div class="container" style="padding: 40px;">
+    <!-- Breadcrumb -->
+    <p style="font-size: 14px; color: gray;">
+        Home / <span style="color: black;">Shop By Categories</span>
+    </p>
+
+
+    <!-- Title -->
+    <h2 style="font-weight: 700; margin-bottom: 30px;">SHOP BY CATEGORIES</h2>
+
+    <!-- Categories Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+        
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/chinese.jpg' %}" alt="Chinese" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Chinese</h3>
+                <p style="margin: 5px 0; color: gray;">2 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/northindian.jpg' %}" alt="North Indian" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">North Indian</h3>
+                <p style="margin: 5px 0; color: gray;">1 Product</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/southindian.jpg' %}" alt="South Indian" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">South Indian</h3>
+                <p style="margin: 5px 0; color: gray;">0 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/mughlai.jpg' %}" alt="Mughlai" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Mughlai</h3>
+                <p style="margin: 5px 0; color: gray;">4 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/snacks.jpg' %}" alt="Snacks" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Snacks</h3>
+                <p style="margin: 5px 0; color: gray;">3 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/beverages.jpg' %}" alt="Beverages" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Beverages</h3>
+                <p style="margin: 5px 0; color: gray;">2 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/breakfast.jpg' %}" alt="Breakfast" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Breakfast</h3>
+                <p style="margin: 5px 0; color: gray;">0 Products</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #fff; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden;">
+            <img src="{% static 'hotdrop/img/fruits.jpg' %}" alt="Fruits" style="width: 100px; height: 100px; object-fit: cover;">
+            <div style="padding: 15px;">
+                <h3 style="margin: 0;">Fruits</h3>
+                <p style="margin: 5px 0; color: gray;">0 Products</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% include 'hotdrop/footer.html' %}
+</body>
+</html>

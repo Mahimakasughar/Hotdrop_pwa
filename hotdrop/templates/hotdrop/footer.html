@@ -1,0 +1,137 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Get In Touch</h3>
+      <p>HotDrop Kitchen delivers taste, quality, and happiness to your doorstep.</p>
+      <p>📍 123 Street, Mumbai, India</p>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 info@hotdrop.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'categories' %}">Categories</a>
+      <a href="{% url 'products' %}">Products</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>My Account</h3>
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Register</a>
+      <a href="#">Cart</a>
+      <a href="#">Checkout</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Subscribe for updates & offers:</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social">
+        <a href="#">📘</a>
+        <a href="#">🐦</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 HotDrop Kitchen. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  color: #ff4b4b;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ff4b4b;
+}
+
+.footer-section form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-section input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.footer-section button {
+  background-color: #ff4b4b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-section button:hover {
+  background-color: #e63e3e;
+}
+
+.social a {
+  display: inline-block;
+  color: white;
+  background-color: #ff4b4b;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-right: 6px;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  background-color: #fff;
+  color: #ff4b4b;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+</style>

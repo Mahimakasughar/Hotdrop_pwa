@@ -1,0 +1,154 @@
+{% load static %}
+{% include 'hotdrop/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | HotDrop Kitchen</title>
+  <link rel="stylesheet" href="{% static 'hotdrop/css/style.css' %}">
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      margin: 20px 50px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .contact-container {
+      width: 85%;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Left Form */
+    .contact-form {
+      flex: 2;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #ff4b4b;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form button {
+      background-color: #ff4b4b;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #e63946;
+    }
+
+    /* Right Side */
+    .contact-info {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact-info iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .contact-info i {
+      color: #ff4b4b;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    Home / <span style="color: black;">Contact</span>
+  </div>
+
+  <section class="contact-container">
+    <!-- Left Contact Form -->
+    <div class="contact-form">
+      <h2>CONTACT US</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Subject" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right Contact Info -->
+    <div class="contact-info">
+      <iframe
+        src="https://www.google.com/maps?q=Mumbai&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+      <p><i>📍</i> 123 Street, Mumbai,India</p>
+      <p><i>✉️</i> info@example.com</p>
+      <p><i>📞</i> +012 345 6789</p>
+    </div>
+  </section>
+
+  {% include 'hotdrop/footer.html' %}
+</body>
+</html>

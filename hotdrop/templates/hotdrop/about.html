@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | HotDrop Kitchen</title>
+  <link rel="stylesheet" href="{% static 'hotdrop/css/style.css' %}">
+  <style>
+    /* 🌈 Background Gradient */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #fff7f7, #ffeaea);
+      margin: 0;
+      padding: 0;
+      animation: fadeInBody 1s ease-in-out;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .breadcrumb {
+      background-color: #fff;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .breadcrumb a {
+      color: #ff4d4d;
+      text-decoration: none;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .about-text h2 {
+      color: #222;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ff4d4d;
+      display: inline-block;
+      padding-bottom: 8px;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ff4d4d, #ff7878);
+      border-radius: 3px;
+      margin: 15px 0;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      font-size: 16px;
+      text-align: justify;
+      color: #444;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInRight 1.4s ease-in-out;
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 992px) {
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-image img {
+        width: 85%;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  {% include 'hotdrop/navbar.html' %}
+
+  <div class="breadcrumb">
+    <a href="{% url 'home' %}">Home</a> / About
+  </div>
+
+  <div class="about-container">
+    <div class="about-text">
+      <h2>ABOUT HOTDROP KITCHEN</h2>
+      <div class="divider"></div>
+      <p>
+        <b>HotDrop Cloud Kitchen</b> is an innovative Web-based Cloud Kitchen Management System designed to simplify food ordering and kitchen operations. The platform allows customers to browse food items, add them to cart, place orders, and track them efficiently.
+      </p>
+      <p>
+      At the same time, admins can manage orders, view customer details, and update order status through an easy-to-use dashboard.
+
+      </p>
+      <p>
+       Our goal is to provide a smooth online food ordering experience with efficient backend management — making it ideal for restaurants, cloud kitchens, and food delivery start-ups.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="{% static 'hotdrop/img/about.jpg' %}" alt="About Cloud Kitchen">
+    </div>
+  </div>
+
+  {% include 'hotdrop/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<header>
+  <nav style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #333;
+    color: white;
+  ">
+    <div class="logo" style="font-size: 22px; font-weight: bold;">
+      <span style="color: #ff4d4d;">HOTDROP</span> Kitchen
+    </div>
+    
+    <ul style="
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    ">
+      <li><a href="{% url 'home' %}" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="{% url 'about' %}" style="color: white; text-decoration: none;">About</a></li>
+      <li><a href="{% url 'products' %}" style="color: white; text-decoration: none;">Products</a></li>
+      <li><a href="{% url 'categories' %}" style="color: white; text-decoration: none;">Categories</a></li>
+      <li><a href="{% url 'register' %}" style="color: white; text-decoration: none;">Register</a></li>
+      <li><a href="{% url 'login' %}" style="color: white; text-decoration: none;">Login</a></li>
+      <li><a href="{% url 'contact' %}" style="color: white; text-decoration: none;">Contact</a></li>
+    </ul>
+  </nav>
+</header>
